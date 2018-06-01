@@ -18,7 +18,11 @@
             alert('Could not create card');
         });
     };
-        
+       $scope.login = function(){
+           $http.post('/auth_api/login/',
+            {username: 'urvaius', password: 'Buffy11$'});
+       }; 
+
        $scope.data = []; 
        $http.get('/scrumboard/lists/').then(function (response) {
            $scope.data = response.data;
